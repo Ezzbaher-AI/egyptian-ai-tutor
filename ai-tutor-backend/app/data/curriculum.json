@@ -1,0 +1,19 @@
+{
+  "grade_2_secondary": {
+    "physics": {
+      "semester_1": {
+        "ohms_law": {
+          "title": "Ohm's Law",
+          "content": "Voltage = Current × Resistance. V = I × R",
+          "examples": [
+            "If V=10V and I=2A, R=5Ω"
+          ]
+        },
+        "electric_current": {
+          "title": "Electric Current",
+          "content": "Electric current is flow of charge through a conductor"
+        }
+      }
+    }
+  }
+}

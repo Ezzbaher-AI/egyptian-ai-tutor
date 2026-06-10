@@ -1,0 +1,95 @@
+/* ==========================================================================
+   1. CORE TAILWIND v4 ARCHITECTURE DIRECTIVE & MATH STYLES
+   ========================================================================== */
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+/* ==========================================================================
+   2. GLOBAL LAYER OVERRIDES
+   ========================================================================== */
+body {
+  @apply bg-slate-100 text-slate-800 antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* ==========================================================================
+   3. PLATFORM CORE UTILITY LAYERS & INTERACTIVE MECHANICS
+   ========================================================================== */
+
+/* Ultra-thin scrollbar layout to replace blocky standard desktop bars */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Smooth message slide-in animation to bring chat logs to life */
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-message {
+  animation: messageSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================================================
+   4. SYSTEM-WIDE ANIMATIONS & FALLBACKS
+   ========================================================================== */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+/* ==========================================================================
+   5. BILINGUAL CURRICULUM OPTIMIZATIONS (Arabic & English Layout Fix)
+   ========================================================================== */
+.prose {
+  text-align: start;
+  unicode-bidi: plaintext; /* Automatically detects if a paragraph is Arabic or English and aligns it correctly */
+}
+
+/* Ensure inline math variables stand out cleanly */
+.prose code::before,
+.prose code::after {
+  content: "" !important; /* Removes standard markdown backtick marks from printing out visually */
+}
+
+/* Math container alignment improvements */
+.math-container .katex-display {
+  margin: 1rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.25rem;
+}
+
+.math-container .katex {
+  font-size: 1.05em;
+  text-align: left;
+}
